@@ -1,8 +1,40 @@
 /* /////////////
     Estilos globales
 ///////////// */
+/* Estilo por defecto: claro */
+body {
+  background-color: white;
+  color: black;
+}
+
 h1 {
     text-align: center;
+    color: black;
+}
+
+h2, strong{
+    color: black; 
+}
+#modo-toggle{
+    color:#e3bc5e;
+    border: 0px;
+}
+/* Estilo oscuro */
+body.dark {
+  background-color: #121212;
+  color: white;
+}
+
+
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark strong{
+    color: white; 
 }
 
 
@@ -35,15 +67,22 @@ h1 {
 /* /////////////
     index
 ///////////// */
+#productos-listados{
+
+}
+
 .li-listados {
     display: flex;
     align-items: center;
-    border: 2px solid #e3bc5e;
+    border-right: 10px solid #3d69fa;
+    border-left: 10px solid #3d69fa;
     font-size: 16px;
-    padding-right: 10px;
-    border-radius: 3px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 16px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+
+    margin-bottom: 16px;
 }
 
 .productos-listados {
@@ -52,6 +91,7 @@ h1 {
 
 .img-listados {
     width: 65px;
+    
 }
 #categoryProd{
     background-color: black;
