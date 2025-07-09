@@ -9,7 +9,7 @@ import { join, __dirname } from "./src/api/utils/index.js";
 
 
 const PORT = environments.port;
-const app = express();
+const app = express();//
 
 
 // Configuramos EJS como motor de plantillas

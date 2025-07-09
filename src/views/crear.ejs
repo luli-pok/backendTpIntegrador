@@ -2,7 +2,7 @@
 <%- include("partials/nav") %>
     
 <hr>
-<h1 class="titulo"><%= title %></h1>
+<h1 class="titulo"><%= title  %></h1>
 <hr>
 
 <div id="altaProducts-container" class="crudForm-container">
@@ -23,6 +23,9 @@
 
         <label for="precioProd">Precio</label>
         <input type="number" name="price" id="precioProd" required>
+
+        <label for="descripcionProd">Precio</label>
+        <input type="text" name="description" id="descripcionProd" required>
 
         <input type="submit" value="Crear producto">
     </form>

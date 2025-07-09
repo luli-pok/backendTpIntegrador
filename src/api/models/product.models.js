@@ -30,7 +30,7 @@ const selectProductFromId = async (id) => {
 ///////////////////////////
 // Crear nuevo producto //
 const insertNewProduct = async (category, image, name, price) => {
-    let sql = `INSERT INTO products (category, image, name, price) VALUES (?, ?, ?, ?)`;
+    let sql = `INSERT INTO products (category, image, name, price, description) VALUES (?, ?, ?, ?)`;
 
     return await connection.query(sql, [category, image, name, price]);
 }
@@ -39,14 +39,14 @@ const insertNewProduct = async (category, image, name, price) => {
 
 //////////////////////////
 // Actualizar producto //
-const updateProduct = async (name, image, price, category, id) => {
+const updateProduct = async (name, image, price, category, description, id) => {
     let sql = `
             UPDATE products
-            SET name = ?, image = ?, price = ?, category = ?
+            SET name = ?, image = ?, price = ?, category = ?, description = ?
             WHERE id = ?
         `;
 
-    return await connection.query(sql, [name, image, price, category, id]);
+    return await connection.query(sql, [name, image, price, category, description, id]);
 }
 
 

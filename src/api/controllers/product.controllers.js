@@ -70,9 +70,9 @@ export const getProductById = async(req, res) => {
 export const createProduct = async (req, res) => {
 
     try {
-        let { category, image, name, price } = req.body;
+        let { category, image, name, price, description } = req.body;
 
-        if(!category || !image || !name || !price) {
+        if(!category || !image || !name || !price || !description) {
             return res.status(400).json({
                 message: "Datos invalidos, asegurate de enviar category, image, name y price"
             });
@@ -85,7 +85,7 @@ export const createProduct = async (req, res) => {
         let [rows] = await connection.query(sql, [category, image, name, price]);
         */
 
-        const [rows] = await Products.insertNewProduct(category, image, name, price);
+        const [rows] = await Products.insertNewProduct(category, image, name, price, description);
 
         res.status(201).json({
             message: "Producto creado con exito",
@@ -107,9 +107,9 @@ export const createProduct = async (req, res) => {
 // Modify product
 export const modifyProduct = async (req, res) => {
     try {
-        let { id, category, image, name, price } = req.body;
+        let { id, category, image, name, price, description } = req.body;
 
-        if(!id || !category || !image || !name || !price) {
+        if(!id || !category || !image || !name || !price || !description) {
             return res.status(400).json({
                 message: "Faltan campos requeridos"
             });
@@ -124,7 +124,7 @@ export const modifyProduct = async (req, res) => {
 
         let [result] = await connection.query(sql, [name, image, price, category, id]); */
 
-        const [result] = await Products.updateProduct(name, image, price, category, id);
+        const [result] = await Products.updateProduct(name, image, price, category, description, id);
 
         // Testearmos que se actualizara
         if(result.affectedRows === 0) {
