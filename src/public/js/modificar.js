@@ -115,6 +115,9 @@ function formularioPutProducto(event, producto) {
                 <label for="precioProd">Precio</label>
                 <input type="number" name="price" id="precioProd" value="${producto.price}" required>
 
+                <label for="descripcionProd">Descripcion</label>
+                <input type="text" name="description" id="descripcionProd" value="${producto.description}" required>
+
                 <input type="submit" value="Actualizar producto">
             </form>
         </div>

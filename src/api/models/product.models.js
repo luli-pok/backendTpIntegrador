@@ -29,10 +29,10 @@ const selectProductFromId = async (id) => {
 
 ///////////////////////////
 // Crear nuevo producto //
-const insertNewProduct = async (category, image, name, price) => {
-    let sql = `INSERT INTO products (category, image, name, price, description) VALUES (?, ?, ?, ?)`;
+const insertNewProduct = async (category, image, name, price, description) => {
+    let sql = `INSERT INTO products (category, image, name, price, description) VALUES (?, ?, ?, ?, ?)`;
 
-    return await connection.query(sql, [category, image, name, price]);
+    return await connection.query(sql, [category, image, name, price, description]);
 }
 
 
